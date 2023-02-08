@@ -1,3 +1,4 @@
+testy = Ayyy
 default: test-shell out.txt
 out.txt : main.exe
 	mono main.exe > out.txt
@@ -9,4 +10,4 @@ clean:
 	rm -f out.txt main.exe
 
 test-shell:
-	echo $$0
+	echo $(testy)
