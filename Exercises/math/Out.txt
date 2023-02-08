@@ -1,2 +1,12 @@
-sqrt(2)=1.4142135623731
-sqrt2*sqrt2=2 (should be equal to 2)
+sqrt2=1.4142135623731
+2^(1/5)=1.14869835499704
+e^pi=23.1406926327793
+pi^e=22.459157718361
+Some Tests
+ sqrt2*sqrt2 = 2 (Should be 2)
+ (2^(1/5))^(5) = 2 (should be 2)
+Log(e^pi)=3.14159265358979 (should be pi)
+gamma(1) = Infinity
+gamma(2) = Infinity
+gamma(3) = Infinity
+gamma(10) = 362879.997652016
