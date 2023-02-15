@@ -15,7 +15,7 @@ public static class math {
 		u.print		("u = ");
 		v.print		("v = ");
 		(v+u).print	("v+u = ");
-		(2.0*u).print	("2*u ="); //Temporary objects can't be created with multiplicatio
+		(2.0*u).print	("2*u ="); //Temporary objects can't be created with multiplication
 		vec w = u*2;
 		w.print("u*2 = ");
 		vec w2= u+6*v-w;
@@ -23,18 +23,6 @@ public static class math {
 		(-u).print("-u=");
 		WriteLine($"u%v = {u%v}");
 		WriteLine($"u.dot(v) = {u.dot(v)}");
-		double x =1.23;
-		x.print("x=");
 		
-	double d1 = 0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1;
-	double d2 = 8*0.1;	
-	double d3 = 0.125+0.125+0.125+0.125+0.125+0.125+0.125+0.125;
-	double d4 = 0.125*8;
-	WriteLine(d1==d2);
-	WriteLine($"d1 = {d1:e16}");	
-	WriteLine($"d1 = {d2:e16}");
-	WriteLine(d3 == d4);
-	WriteLine($"d1 = {d3:e16}");
-	WriteLine($"d1 = {d4:e16}");
 	}
 }
