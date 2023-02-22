@@ -1,17 +1,15 @@
-default : Out1.txt Out2.txt
 
 
-Out1.txt: main1.exe
-	mono $< >> $@
 
-
-main1.exe: main.cs
-	mcs -target:exe -out:$@ -reference: $^
-main2.exe: main2.cs
-	mcs -target:exe -out:$@ -reference: $^
-
-
+Out.txt: main.exe infile.txt makefile outfile.txt
+	echo 6 7 8 9 10 | mono $< -output:$(filter out%,$^) -input:$(filter in%,$^) -numbers:1,2,3,4,5 > $@
+main.exe: main.cs
+	mcs -target:exe -out:$@ $<
+infile.txt: makefile
+	echo 11\\n12\\n13\\n14\\n15 > $@
+outfile.txt : makefile
+	touch $@
 test:
 	mcs --version
 clean:
-	rm --force main.exe Out.txt sfuns.dll
+	rm --force main.exe Out.txt infile.txt outfile.txt

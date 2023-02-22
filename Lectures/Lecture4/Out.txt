@@ -1,0 +1,5 @@
+Hello 
+hello
+world
+-output:output.txt
+-input:infile.txt
