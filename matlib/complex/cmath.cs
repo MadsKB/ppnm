@@ -12,6 +12,8 @@ public static complex  sin(complex z) => (exp(I*z)-exp(-I*z))/2/I;
 public static complex  cos(complex z) => (exp(I*z)+exp(-I*z))/2;
 public static complex  log(complex z) => Math.Log(abs(z))+I*arg(z);
 public static complex sqrt(complex z) => Math.Sqrt(abs(z))*exp(I*arg(z)/2);
+public static complex cosh(complex z) => (exp(z)+exp(-z))/2;
+public static complex sinh(complex z) => (exp(z)-exp(-z))/2;
 public static double   abs(complex z){
 	double x=Math.Abs(z.Re),y=Math.Abs(z.Im);
 	if(x==0 && y==0) return 0;

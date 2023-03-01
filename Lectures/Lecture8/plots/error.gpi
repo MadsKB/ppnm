@@ -1,0 +1,6 @@
+set terminal svg
+set out "Error.svg"
+set xzeroaxis
+set yzeroaxis
+plot [-5:5][-1.05:1.05] "error.data" with line \
+,"errorFunc.data" with points
