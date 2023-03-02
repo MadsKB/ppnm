@@ -1,14 +1,22 @@
 default : Gamma.svg Error.svg
 
-Gamma.svg : gamma.gpi gamma.data factorials.data
+Gamma.svg : gamma.gpi gamma.data factorials.data gammaLog.data
 	gnuplot $<
 gamma.data : main.exe
+	mono $< > $@
+
+gammaLog.data : main_log_gamma.exe
 	mono $< > $@
 
 Error.svg : error.gpi error.data errorFunc.data
 	gnuplot $<
 error.data : main_error.exe
 	mono $< > $@
+
+main_log_gamma.exe : main_log_gamma.cs sfuns.dll
+	mcs -target:exe -out:$@ \
+		$(filter %.cs, $^) $(addprefix -reference:,$(filter %.dll,$^))
+
 
 main_error.exe : main_error.cs sfuns.dll
 	mcs -target:exe -out:$@ \

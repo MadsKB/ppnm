@@ -10,5 +10,6 @@ set samples 1600
 plot [-5:5][-5:5] \
 "gamma.data" with lines linetype 1 title "theory" \
 , "factorials.data" using ($1+1):($2) with points pointtype 4 title "experiment" \
+, "gammaLog.data" with lines linetype 2 title "Log theory" \
 #, gamma(x) with lines linetype 2 title "built-in gamma"
 #Cut is a command for getting rid of akward discontinuity lines
