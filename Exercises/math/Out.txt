@@ -2,11 +2,23 @@ sqrt2=1.4142135623731
 2^(1/5)=1.14869835499704
 e^pi=23.1406926327793
 pi^e=22.459157718361
+ 
 Some Tests
  sqrt2*sqrt2 = 2 (Should be 2)
  (2^(1/5))^(5) = 2 (should be 2)
 Log(e^pi)=3.14159265358979 (should be pi)
+(pi^e)^(1/e)=3.14159265358979 (should be pi)
+ 
+Some values of gamma: 
+
 gamma(1) = 0.999999989064903
 gamma(2) = 0.999999989064903
 gamma(3) = 1.9999999781298
 gamma(10) = 362879.997652016
+ 
+ Some values values of lngamma: 
+
+lngamma(1) = -1.09350976051914E-08
+lngamma(2) = -1.09350976051914E-08
+lngamma(3) = 0.693147169624848
+lngamma(10) = 12.8018274736111

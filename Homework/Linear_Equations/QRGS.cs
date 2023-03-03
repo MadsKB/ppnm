@@ -1,23 +1,26 @@
+
 public class QRGS{
 	public matrix Q,R;
 	public QRGS(matrix A){
 	//Ortagonalizing A
 	int m = A.size2;
+	System.Console.WriteLine(m);
 	Q = A.copy(); R = new matrix (m,m);
 	for(int i = 0;i<m;i++){
 		R[i,i] = Q[i].norm();
 		Q[i] /=R[i,i];
-		for(int j=i+1;i<m; i++){
-			R[i,j] = Q[i].dot(Q[j]);
-			Q[j]=Q[i]*R[i,j];}
+			for(int j=i+1;j<m; j++){
+				R[i,j] = Q[i].dot(Q[j]);
+				Q[j]-=Q[i]*R[i,j];
+			}
 		}
 	}
 	public vector solve(vector b){
-		vector x = Q.T*b
+		vector x = Q.T*b;
 		for (int i = x.size-1; i>=0;i--){
 			double sum = 0;
 			for(int k = i+1; k<x.size;k++) sum+=R[i,k]*x[k];
-			x[i] = (c[i]-sum)/R[i,i];
+			x[i] = (x[i]-sum)/R[i,i];
 		}
 		return x;
 	}

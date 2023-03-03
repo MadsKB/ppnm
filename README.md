@@ -3,10 +3,28 @@ Repository for AU course "Praktisk programmering og numeriske metoder" ("practic
 
 
 (X indicate all done, x indicate done, but optional parts not done)
-Exercises
-[]
-[]
-[]
-Homework
+Exercises:
+[X] Posix
+[X] git
+[X] hello
+[X] Math
+[] Epsilon
+[] vec
+[] input/output
+[] complex
+[X] Wiki
+[] generic list
+[] multiprocessing
+[] plots
+Homework:
 [] Linear Equations
-[]
+[] Eigenvalues
+[] Least-squares
+[] Spline
+[] ODE
+[] Quadratures
+[] Monte Carlo
+[] Roots
+[] Minimisation
+[] Neural network
+
