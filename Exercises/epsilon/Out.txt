@@ -3,14 +3,25 @@ my max int = 2147483647
 int.MaxValue = 2147483647
 my min int value = -2147483648
 int.MinValue = -2147483648
+
+ 2): 
+
 Double machine epsilon = 2.22044604925031E-16 
- Theoretical Double epsilon = 2.22044604925031E-16 
+Theoretical Double epsilon = 2.22044604925031E-16 
+ 
 Float machine epsilon = 1.192093E-07 
- Theoretical Float epsilon = 1.19209289550781E-07 
+Theoretical Float epsilon = 1.19209289550781E-07 
+
+ 3): 
+
 sumA-1 = 0.000000e+000 should be 1.110223e-010
-sumB-1 = 1.110223e-010 should be 1.110223e-010
+sumB-1 = 1.110223e-010 should be 1.110223e-010 
+
 This happens due to differences in exponens; epsilon is the smallest value we can add to 1 to get something else, so in the first loop (sumA) we effectivly add 0 to 1 n times, which gives one 
 . In the second loop, C# can instead switch expontial, such that epsilon/2 isn't just rounded to 0 anymore. By adding the tiny parts up first, they become something we can add to one without it getting rounded to zero.
+
+ 4): 
+
 d1 = 7.999999999999999e-001
 d2 = 8.000000000000000e-001
 d1==d2 ? => False

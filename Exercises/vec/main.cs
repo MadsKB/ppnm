@@ -11,7 +11,7 @@ public static class math {
 	public static void Main(){
 		vec u = new vec(1,2,3);
 		vec v = new vec(2,3,4);
-		u.print("s");
+		u.print("s = ");
 		u.print		("u = ");
 		v.print		("v = ");
 		(v+u).print	("v+u = ");
@@ -19,10 +19,11 @@ public static class math {
 		vec w = u*2;
 		w.print("u*2 = ");
 		vec w2= u+6*v-w;
-		w2.print("w2 = ");
+		w2.print("u+6*v-u*2 = ");
 		(-u).print("-u=");
-		WriteLine($"u%v = {u%v}");
+		WriteLine($"(dot product) u%v = {u%v}");
 		WriteLine($"u.dot(v) = {u.dot(v)}");
+
 		
 	}
 }

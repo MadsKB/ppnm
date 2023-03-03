@@ -8,7 +8,7 @@ Exercises:
 [X] git
 [X] hello
 [X] Math
-[] Epsilon
+[X] Epsilon
 [] vec
 [] input/output
 [] complex

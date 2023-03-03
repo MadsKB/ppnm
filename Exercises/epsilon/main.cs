@@ -20,15 +20,17 @@ public static class math {
 	Write("my min int value = {0}\n", i);
 	Write("int.MinValue = {0}\n",int.MinValue);
 	//2):
+	WriteLine("\n 2): \n");
 	double x =1;
 	while (1+x != 1){x/=2;}
 	x*=2;
 	float y = 1F;
 	while((float)(1F+y) != 1F){y/=2F;} 
 	y*=2F;
-	Write("Double machine epsilon = {0} \n Theoretical Double epsilon = {1} \n",x,Pow(2,-52));
-	Write("Float machine epsilon = {0} \n Theoretical Float epsilon = {1} \n",y,Pow(2,-23));
+	Write("Double machine epsilon = {0} \nTheoretical Double epsilon = {1} \n \n",x,Pow(2,-52));
+	Write("Float machine epsilon = {0} \nTheoretical Float epsilon = {1} \n",y,Pow(2,-23));
 	//3):
+	WriteLine("\n 3): \n");
 	int n=(int)1e6;
 	double epsilon = Pow(2,-52);
 	double tiny = epsilon/2;
@@ -38,9 +40,10 @@ public static class math {
 	for(int d=0;d<n;d++){sumB+=tiny;}
 	sumB+=1;
 	WriteLine($"sumA-1 = {sumA-1:e} should be {n*tiny:e}");
-	WriteLine($"sumB-1 = {sumB-1:e} should be {n*tiny:e}");
+	WriteLine($"sumB-1 = {sumB-1:e} should be {n*tiny:e} \n");
 	WriteLine("This happens due to differences in exponens; epsilon is the smallest value we can add to 1 to get something else, so in the first loop (sumA) we effectivly add 0 to 1 n times, which gives one \n. In the second loop, C# can instead switch expontial, such that epsilon/2 isn't just rounded to 0 anymore. By adding the tiny parts up first, they become something we can add to one without it getting rounded to zero.");	
 	//4):
+	WriteLine("\n 4): \n");
 	double d1 = 0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1;
 	double d2 = 0.1*8;
 	WriteLine($"d1 = {d1:e15}");
