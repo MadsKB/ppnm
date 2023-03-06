@@ -23,7 +23,9 @@ public static class math {
 		(-u).print("-u=");
 		WriteLine($"(dot product) u%v = {u%v}");
 		WriteLine($"u.dot(v) = {u.dot(v)}");
-
+		Write("String overloading: u = ");
+		WriteLine(u.ToString());
+		WriteLine($"Does ({(u*0.2).ToString()}) approximatly equal ({(u*0.1+u*0.1).ToString()}) ? => {(u*0.2).approx(u*0.1+u*0.1)}");
 		
 	}
 }

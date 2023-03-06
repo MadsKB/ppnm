@@ -9,11 +9,11 @@ Exercises:
 [X] hello
 [X] Math
 [X] Epsilon
-[] vec
-[] input/output
-[] complex
+[X] vec
+[X] input/output
+[X] complex
 [X] Wiki
-[] generic list
+[x] generic list
 [] multiprocessing
 [] plots
 Homework:

@@ -8,3 +8,5 @@ u+6*v-u*2 = 11 16 21
 -u=-1 -2 -3
 (dot product) u%v = 20
 u.dot(v) = 20
+String overloading: u = 1 2 3
+Does (0.2 0.4 0.6) approximatly equal (0.2 0.4 0.6) ? => True

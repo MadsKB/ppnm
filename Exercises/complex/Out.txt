@@ -1,6 +1,6 @@
-6.12e-17+-1i
-0+1.57i
-0.707+0.707i
-0.208+0i
-1.18+0i
-1.54+0i
+sqrt(-1) = 6.12e-17+-1i (should be +-i)
+ln(i) = 0+1.57i (should be i*pi/2)
+sqrt(i)=0.707+0.707i (should be 1/sqrt(2)+i/sqrt(2), with 1/sqrt(2) = 0.707, approx
+i^i = 0.208+0i (Should be about 0.208)
+sinh(1)+i*sin(i) = 0+0i (Should equal 0, pr an identity)
+cosh(1)-cos(i)=0+0i (Should equal 0, pr an identity)

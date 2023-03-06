@@ -4,7 +4,6 @@ public class QRGS{
 	public QRGS(matrix A){
 	//Ortagonalizing A
 	int m = A.size2;
-	System.Console.WriteLine(m);
 	Q = A.copy(); R = new matrix (m,m);
 	for(int i = 0;i<m;i++){
 		R[i,i] = Q[i].norm();
