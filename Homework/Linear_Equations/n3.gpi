@@ -1,0 +1,18 @@
+set terminal svg
+set output "N3Plot.svg"
+set key bottom right
+set xlabel "N"
+set ylabel "elapsed real time (s)"
+set xzeroaxis
+set yzeroaxis
+set samples 1600
+
+n3(x) = A*x**3+C
+fit n3(x) "time.data" using 1:2 via "start.par"
+
+
+plot \
+"time.data" using ($1+1):($2) with points pointtype 4 title "messured time" \
+, n3(x) t "Fit to A*n^3+C"
+#, gamma(x) with lines linetype 2 title "built-in gamma"
+#Cut is a command for getting rid of akward discontinuity lines

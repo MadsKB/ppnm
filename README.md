@@ -17,7 +17,7 @@ Exercises:
 [] multiprocessing
 [] plots
 Homework:
-[] Linear Equations
+[X] Linear Equations
 [] Eigenvalues
 [] Least-squares
 [] Spline

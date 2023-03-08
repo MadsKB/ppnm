@@ -28,6 +28,7 @@ public static class math {
                 if(words[0] == "-N") m = int.Parse(words[1]);
 		if(words[0] == "-M") n = int.Parse(words[1]);
 		}
+		WriteLine(m);
 		var rnd = new Random(132);
 		matrix A = randomMatrix(n,m,rnd);
 		QRGS decomp = new QRGS(A);

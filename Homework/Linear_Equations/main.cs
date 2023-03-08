@@ -2,7 +2,7 @@ using System;
 using static System.Console;
 using static System.Math;
 public static class math {
-	public static vector randomVector(int n, System.Random rnd) {
+	public static vector randomVector(int n,Random rnd) {
 		vector randVec = new vector(n);
 		for (int i = 0; i<n;i++){
 			randVec[i] = rnd.NextDouble();
@@ -10,7 +10,7 @@ public static class math {
 		return randVec;
 	}
 	//Generates a random n by m matrix
-	public static matrix randomMatrix(int n, int m, System.Random rnd){
+	public static matrix randomMatrix(int n, int m, Random rnd){
 		
 		var Out = new matrix(n,m);
 		for (int i = 0; i<m;i++){

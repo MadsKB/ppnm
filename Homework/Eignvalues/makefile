@@ -1,13 +1,15 @@
+DIR = $(HOME)/repos/ppnm/matlib/matrix
+
+
+
 Out.txt: main.exe
-	mono main.exe > Out.txt
+	mono $< > $@
 
-sfuns.dll : sfuns.cs
-	mcs -target:library -out:$@ $<
+jacobi_and_Matrix.dll : $(DIR)/matrix.cs $(DIR)/vector.cs jacobian.cs
+	mcs -target:library -out:$@ $^
 
-main.exe: main.cs sfuns.dll
-	mcs -target:exe -out:main.exe -reference:sfuns.dll main.cs
+main.exe: main.cs jacobi_and_Matrix.dll
+	mcs -target:exe -out:main.exe $(addprefix -reference:,$(filter %.dll,$^)) $<
 
-test:
-	mcs --version
 clean:
-	rm --force main.exe Out.txt sfuns.dll
+	$(RM) *.exe *.dll *log [Oo]ut.txt *.data *.svg
