@@ -1,7 +1,49 @@
 # ppnm
 Repository for AU course "Praktisk programmering og numeriske metoder" ("practical programming and numerical methods")
 
+ ======================================
+| #  | homework      | A | B | C | Σ   |
+ ======================================
+| 1  | LinEq         | 6 | 3 | 1 | 10  |
+---------------------------------------
+| 2  | EVD           | 6 | - | - |  9  |
+---------------------------------------
+| 3  | LeastSquares  | 6 | 3 | 1 |  10 |
+---------------------------------------
+| 4  | Splines       | 6 | 3 | 1 |  10 |
+---------------------------------------
+|              ...                     |
+ ======================================
+|                    total points: 26  |
+ ======================================
 
+ ======================================
+| #  | Exercises     | Completed       |
+ ======================================
+| 1  | Posix	     | X               |
+---------------------------------------
+| 2  | Git	     | X               |
+---------------------------------------
+| 3  | Hello	     | X               |
+---------------------------------------
+| 4  | Epsilon	     | X               |
+---------------------------------------
+| 5  | vec           | X	       |
+---------------------------------------
+| 6  | input/output  | X 	       |
+---------------------------------------
+| 7  | Complex	     | X 	       |
+---------------------------------------
+| 8  | Wiki 	     | X 	       |
+---------------------------------------
+| 9  | Generic list  | X 	       |
+---------------------------------------
+| 10 | multiprocess. | X 	       |
+---------------------------------------
+| 11 | plots	     | X 	       |
+---------------------------------------
+|				       |
+ ======================================
 (X indicate all done, x indicate done, but optional parts not done)
 Exercises:
 [X] Posix
@@ -14,17 +56,5 @@ Exercises:
 [X] complex
 [X] Wiki
 [x] generic list
-[] multiprocessing
-[] plots
-Homework:
-[X] Linear Equations
-[] Eigenvalues
-[] Least-squares
-[] Spline
-[] ODE
-[] Quadratures
-[] Monte Carlo
-[] Roots
-[] Minimisation
-[] Neural network
-
+[x] multiprocessing
+[x] plots

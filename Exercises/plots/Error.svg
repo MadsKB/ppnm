@@ -101,10 +101,10 @@
 	<path stroke='black'  d='M54.53,18.01 L54.53,444.00 L574.82,444.00 L574.82,18.01 L54.53,18.01 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
-	<g id="gnuplot_plot_1" ><title>"error.data"</title>
+	<g id="gnuplot_plot_1" ><title>Our Error func</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(507.09,39.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text>"error.data"</text>
+		<text><tspan font-family="Arial" >Our Error func</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -270,10 +270,10 @@
 		L571.16,28.15 L571.57,28.15 L571.97,28.15 L572.38,28.15 L572.79,28.15 L573.19,28.15 L573.60,28.15 L574.01,28.15
 		L574.41,28.15 L574.82,28.15  '/></g>
 	</g>
-	<g id="gnuplot_plot_2" ><title>"errorFunc.data"</title>
+	<g id="gnuplot_plot_2" ><title>Tabulated values from wikipedia</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(507.09,57.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text>"errorFunc.data"</text>
+		<text><tspan font-family="Arial" >Tabulated values from wikipedia</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">

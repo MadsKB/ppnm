@@ -1,0 +1,23 @@
+set terminal svg
+set output "Convergence.svg"
+set key bottom right
+set multiplot layout 1,2
+
+set xlabel "rmax"
+set ylabel "Ground state energy"
+set xzeroaxis
+set yzeroaxis
+set samples 1600
+
+
+plot \
+"rmaxConv.data" using ($2+1):($3) with points pointtype 4 title "dr = 0.1 bhor radaii" \
+
+set xlabel "dr"
+
+plot \
+"drConv.data" using ($1+1):($3) with points pointtype 4 title "rmax = 5 bhor radaii" \
+
+unset multiplot
+#, gamma(x) with lines linetype 2 title "built-in gamma"
+#Cut is a command for getting rid of akward discontinuity lines

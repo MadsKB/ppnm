@@ -111,10 +111,10 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
-	<g id="gnuplot_plot_1" ><title>theory</title>
+	<g id="gnuplot_plot_1" ><title>Our gamma function</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(507.09,372.30)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >theory</tspan></text>
+		<text><tspan font-family="Arial" >Our gamma function</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -244,10 +244,10 @@
 		L512.77,64.30 L513.18,62.66 L513.59,61.01 L513.99,59.33 L514.40,57.64 L514.80,55.92 L515.21,54.19 L515.25,54.01
 		 '/></g>
 	</g>
-	<g id="gnuplot_plot_2" ><title>experiment</title>
+	<g id="gnuplot_plot_2" ><title>factorials</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(507.09,390.30)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >experiment</tspan></text>
+		<text><tspan font-family="Arial" >factorials</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -257,10 +257,10 @@
 	<use xlink:href='#gpPt3' transform='translate(536.76,386.40) scale(4.50)' color='rgb(  0, 158, 115)'/>
 </g>
 	</g>
-	<g id="gnuplot_plot_3" ><title>Log theory</title>
+	<g id="gnuplot_plot_3" ><title>Our lngamma function</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(507.09,408.30)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >Log theory</tspan></text>
+		<text><tspan font-family="Arial" >Our lngamma function</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
