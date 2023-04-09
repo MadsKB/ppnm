@@ -1,0 +1,9 @@
+set terminal svg 
+set output 'Aplot.svg' 
+set key bottom right 
+set xlabel 'x' 
+set ylabel 'y' 
+set xzeroaxis 
+set yzeroaxis 
+set samples 1600 
+plot 'plot.data' using ($1):($2) index 0 with points pointtype 1 title 'solution to y" = -y

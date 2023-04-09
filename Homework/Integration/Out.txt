@@ -1,0 +1,10 @@
+Part A): (result, error, number of integral evaluations)
+∫01 dx √(x) = 2/3; 		Numerical Result: (0.666953909054655, 0.00045185454563534, 34)
+∫01 dx 1/√(x)=2; 		Numerical Result: (1.99996150007805, 0.000412012551873603, 2311224)
+∫01 dx 4√(1-x²) = π; 	Numerical Result: (3.14183457802727, 0.00121650911188795, 74)
+∫01 dx ln(x)/√(x) = -4; 	Numerical Result: (-3.99991705899915, 0.000754016739922036, 2315624)
+
+Part B):
+∫01 dx 1/√(x) = 2: Clenshaw-Curtis Result: (1.99999201046432, 0.00118737191764096, 32) (Scipy quad method had 231 evaluations)
+∫01 dx ln(x)/√(x) = -4: Clenshaw-Curtis Result: (-3.99987385646141, 0.00111272494904316, 438) (Scipy quad method had 315 evalutations)
+As one can see, the variable transformed integration rutines preform much better; in the first case it even preforms better then the integration rutine from scipy/python (Absolute/relative tolorance was set to be identical; it should be noted that quad achived a much lower error then our method, on the order of 10^(-13)

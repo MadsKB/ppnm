@@ -1,0 +1,9 @@
+set terminal svg 
+set output 'Errplot.svg' 
+set key bottom right 
+set xlabel 'x' 
+set ylabel 'Absolute difference compared to tabulated values (Wiki)' 
+set xzeroaxis 
+set yzeroaxis 
+set samples 1600 
+plot 'plot.data' using ($1):($2) index 0 with points pointtype 1 title 'Approx from plot exercise' , 'plot.data' using ($1):($3) index 0 with points pointtype 2 title 'Our function'

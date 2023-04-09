@@ -20,14 +20,21 @@ public static class math {
 	public static void Main(string[] args){
 		
 		double dr =0.1, rmax = 10;
-		int sol = 0;
+		int[] sols = {0};
 		bool waveOut = false;
 		foreach(var arg in args) {
 			var words = arg.Split(":");
 		
 			if (words[0] == "-dr") dr = double.Parse(words[1]);
 			if (words[0] == "-rmax") rmax = double.Parse(words[1]);
-			if (words[0] == "-sol") sol = int.Parse(words[1]);
+			if (words[0] == "-sol") {
+				
+			var numbers = words[1].Split(",");
+			//allocate memory for the array
+			sols = new int[numbers.Length];
+			for(int i = 0;i<numbers.Length;i++){
+				sols[i] = int.Parse(numbers[i]);
+			}}
 			if (words[0] == "-waveOut") waveOut = bool.Parse(words[1]);
 		}		
 		
@@ -49,10 +56,14 @@ public static class math {
 		
 
 		if (waveOut) {
-		for (int i = 0; i<npoints;i++) WriteLine($"{r[i]} {V[i,sol]}");
+			foreach (var sol in sols){
+			WriteLine($"{H[sol,sol]}");
+			for (int i = 0; i<npoints;i++) WriteLine($"{r[i]} {V[i,sol]/Sqrt(dr)}");
+			WriteLine($"\n");
+			}
 		} else {
 
-		WriteLine($"{dr} {rmax} {H[sol,sol]}");
+		WriteLine($"{dr} {rmax} {H[sols[0],sols[0]]}");
 		}
 	}
 }

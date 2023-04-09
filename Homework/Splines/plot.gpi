@@ -1,0 +1,18 @@
+set terminal svg
+set output "Plot.svg"
+set key bottom right
+set xlabel "x"
+set ylabel "y"
+set xzeroaxis
+set yzeroaxis
+set samples 1600
+
+
+plot \
+"plot.data" using ($1):($2) index 1 with points pointtype 1 title "Linearly Interpulated points" \
+, "plot.data" using ($1):($2) index 0 with points pointtype 2 title "Tabulated points" \
+, 1/(x**2+0.5) with lines title "Underlying function" \
+, "plot.data" using ($1):($2) index 2 with points pointtype 3 title "Linearly integrated points" \
+, sqrt(2)*(atan(x/(0.5*sqrt(2)))-atan(-3/(0.5*sqrt(2)))) with lines title "analytical intergral" \
+#, gamma(x) with lines linetype 2 title "built-in gamma"
+#Cut is a command for getting rid of akward discontinuity lines
