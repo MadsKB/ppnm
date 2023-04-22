@@ -1,0 +1,15 @@
+set terminal svg 
+set output 'Cplot.svg' 
+set key bottom right 
+set multiplot layout 2,2 
+set xlabel 'rmin' 
+set ylabel 'E0+0.5' 
+set xzeroaxis 
+set yzeroaxis 
+plot 'CPlot.data' using ($1):($5+0.5) index 0 with points pointtype 1 title 'rmin convergence' 
+set xlabel 'rmax' 
+plot [8:20] 'CPlot.data' using ($2):($5+0.5) index 1 with points pointtype 1 title 'rmax convergence' 
+set xlabel 'acc' 
+plot 'CPlot.data' using ($3):($5+0.5) index 2 with points pointtype 1 title 'acc convergence' 
+set xlabel 'eps' 
+plot 'CPlot.data' using ($4):($5+0.5) index 3 with points pointtype 1 title 'eps convergence' 

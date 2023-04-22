@@ -1,6 +1,9 @@
 DIR = ../../matlib/matrix
 GENL = ../../Exercises/genericList
 
+Out.txt : main.exe
+	mono $< >$@
+
 all : Aplot.svg Bplot.svg
 
 Aplot.svg : Aplot.gpi plot.data
@@ -36,10 +39,7 @@ Aplot.gpi :
 plot.data : main.exe
 	mono $< > $@
 
-General.dll : $(DIR)/matrix.cs $(DIR)/vector.cs $(GENL)/genlist.cs ODE.cs
-	mcs -target:library -out:$@ $^
-
-ODE.dll : ODE.cs General.dll
+General.dll : $(DIR)/matrix.cs $(DIR)/vector.cs $(GENL)/genlist.cs montoCarlo.cs
 	mcs -target:library -out:$@ $^
 
 main.exe: main.cs General.dll
