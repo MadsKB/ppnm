@@ -2,21 +2,6 @@ using System;
 using static System.Console;
 using static System.Math;
 public static class math {
-	
-	public static vector randomVector(int n, System.Random rnd) {
-		vector randVec = new vector(n);
-		for (int i = 0; i<n;i++){
-			randVec[i] = rnd.NextDouble();
-		}
-		return randVec;
-	}
-//Generates a random n by m matrix
-	public static matrix randomMatrix(int n, int m, System.Random rnd){
-		var Out = new matrix(n,m);
-		for (int i = 0; i<m;i++){
-			Out[i] = randomVector(n, rnd);
-		}return Out;
-	}
 	public static void Main(string[] args){
 		
 		double dr =0.1, rmax = 10;

@@ -1,6 +1,7 @@
 DIR = $(HOME)/repos/ppnm/matlib/matrix
 
-default : Convergence.svg waveplot.svg
+
+default : Convergence.svg waveplot.svg Out.txt
 
 waveplot.svg : waveplot.gpi wave.data
 	gnuplot < $<

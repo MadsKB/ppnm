@@ -17,6 +17,11 @@ public static class math {
 		WriteLine($"∫01 dx 1/√(x) = 2: Clenshaw-Curtis Result: {NumInt.clenshawIntegrate(g,a,b)} (Scipy quad method had 231 evaluations)" );
 		WriteLine($"∫01 dx ln(x)/√(x) = -4: Clenshaw-Curtis Result: {NumInt.clenshawIntegrate(delegate(double x){return Log(x)/Sqrt(x);},a,b)} (Scipy quad method had 315 evalutations)");
 		WriteLine($"As one can see, the variable transformed integration rutines preform much better; in the first case it even preforms better then the integration rutine from scipy/python (Absolute/relative tolorance was set to be identical; it should be noted that quad achived a much lower error then our method, on the order of 10^(-13)");
+		WriteLine("\n Part C):");
+		WriteLine($"∫1∞ dx 1/x² = 1; 	Numerical Result: {NumInt.integrate(delegate(double x){return Pow(x,-2.0);},1,double.PositiveInfinity)} (Scipy quad method had 15 evaluations, but an error on the order of 10^(-14), despite accuracy goals being set to the same)");
+		WriteLine($"∫(-∞)(∞) dx exp(-x²) = 1.77245; 	Numerical Result: {NumInt.integrate(delegate(double x){return Exp(-x*x);},double.NegativeInfinity,double.PositiveInfinity)} (Scipy quad method had 150 evaluations, with error on the order of 10^(-6))");
+		WriteLine($"∫-∞(0) dx exp(x) = 1; 	Numerical Result: {NumInt.integrate(delegate(double x){return Exp(x);},double.NegativeInfinity,0)} (Scipy quad method had 75 evaluations, with an error on the order of 10^(-5))");
+
 
 	}
 }

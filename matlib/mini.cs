@@ -45,7 +45,7 @@ public static class opt {
 			break;
 		};
 		lambda /=2.0;
-		if (lambda < 1.0/64){
+		if (lambda < 1.0/128){
 			//start.print();
 			start+=dx*lambda;
 			//start.print();

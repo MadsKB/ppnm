@@ -14,7 +14,7 @@ Repository for AU course "Praktisk programmering og numeriske metoder" ("practic
 ---------------------------------------
 | 5  | ODE           | 6 | 3 | - |  9  |
 ---------------------------------------
-| 6  | Integration   | 6 | 3 | - |  9  |
+| 6  | Integration   | 6 | 3 | 1 |  10 |
 ---------------------------------------
 | 7  | Monte Carlo   | 6 | 3 | - |  9  |
 ---------------------------------------
@@ -22,7 +22,7 @@ Repository for AU course "Praktisk programmering og numeriske metoder" ("practic
 ---------------------------------------
 | 9  | Minimisation  | 6 | 3 | - |  9  |
 ---------------------------------------
-| 10 | Neural Network| - | - | - |  -  |
+| 10 | Neural Network| 6 | 3 | - |  9  |
 ---------------------------------------
 |              ...                     |
  ======================================
