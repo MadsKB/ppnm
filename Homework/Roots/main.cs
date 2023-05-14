@@ -18,8 +18,10 @@ public static class math {
 
 	}
 	public static void Main(string[] args){
+		
 		int A = 0;
 		int C = 0;
+		int conv = 1;
 		int plot = 0;
 		vector E0 = new vector(1);
 		E0[0] = -1;
@@ -27,6 +29,7 @@ public static class math {
 		double rmax = 8;
 		double eps = 0.01;
 		double acc = 0.01;
+		double rootEps = 0.01;
 		foreach(var arg in args){
 			var words = arg.Split(":");
 		
@@ -38,6 +41,9 @@ public static class math {
 		if(words[0] == "-rmax") rmax = double.Parse(words[1]);
 		if(words[0] == "-eps") eps = double.Parse(words[1]);
 		if(words[0] == "-acc") acc = double.Parse(words[1]);
+		if(words[0] == "-rootEps") rootEps = double.Parse(words[1]);
+		if(words[0] == "-E0") E0[0] = double.Parse(words[1]);
+		if(words[0] == "-conv") conv = int.Parse(words[1]);
 		}
 		//Part A
 		if (A ==1) {
@@ -48,7 +54,8 @@ public static class math {
 				return Out;};
 
 			vector x0 = new vector(2);
-			roots.newton(f,x0).print();
+			//x0[0] = 5;
+			(roots.newton(f,x0)).Item1.print();
 		} else {
 			Func<vector,vector> m = delegate(vector E){
 				var v = new vector(2);
@@ -56,8 +63,15 @@ public static class math {
 				v[1] = (1-rmax*Sqrt(-2*E[0]))*Exp(-Sqrt(-2*E[0])*rmax);
 				return M(E[0],rmin,rmax,acc,eps) - v*C;
 			};
-			double Output = (roots.newton(m,E0))[0];
-			if (plot == 0) {WriteLine($"{rmin} {rmax} {acc} {eps} {Output}");
+			var O = new vector(1);
+			double Output;
+			int evals;
+			(O,evals) = roots.newton(m,E0,rootEps);
+			Output = O[0];
+			if (plot == 0) {
+				if (conv == 0){
+					WriteLine($"{Output}");
+				} else WriteLine($"{rmin} {rmax} {acc} {eps} {Output} {evals}");
 			} else {			
 			Func<double,vector,vector> Psi = delegate(double x, vector y){
 				var Out = new vector(2);
@@ -72,7 +86,7 @@ public static class math {
 			y0[1] = 1-2*rmin;
 			var yerr = new vector(2);
 			(y0,yerr) = ODE.driver(Psi,rmin,y0,rmax,0.01,acc,eps,rs,fs);
-			for (int i = 0; i<fs.size;i++) WriteLine($"{rs[i]} {(fs[0])[i]}");
+			for (int i = 0; i<fs.size;i++) WriteLine($"{rs[i]} {(fs[i])[0]}");
 			} 
 		}
 	}

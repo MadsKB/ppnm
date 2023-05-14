@@ -34,7 +34,7 @@ Aplot.gpi :
 	plot 'plot.data' using (\$$1):(\$$2) index 0 with points pointtype 1 title 'solution to y\" = -y" >$@
 
 plot.data : main.exe
-	mono $< > $@
+	mono $< -acc:0.001 > $@
 
 General.dll : $(DIR)/matrix.cs $(DIR)/vector.cs $(GENL)/genlist.cs ODE.cs
 	mcs -target:library -out:$@ $^

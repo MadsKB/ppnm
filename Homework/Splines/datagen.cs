@@ -7,8 +7,8 @@ public static class math {
 		double xStart = -3;
 		double xEnd = 3;
 		double dx = (xEnd-xStart)/dataPoints;
-		Func<double,double> f = delegate(double d){return 1/(Pow(d,2)+0.5);};
-		
+		Func<double,double> f = delegate(double t){return 1/(Pow(t,2)+0.5);};
+		//Part A):
 		int splinePoints = 50;
 		double[] xs = new double[dataPoints+1];
 		double[] ys = new double[dataPoints+1];
@@ -26,31 +26,42 @@ public static class math {
 		for (int i = 0; i<splinePoints;i++){
 			WriteLine($"{dx*i+xStart} {spline.linterpInteg(xs,ys,dx*i+xStart)}");
 		}
+		//Part C):
+		//We'll use cosine as our interpulation function
 		WriteLine($"\n");
 		vector x = new vector(5);
 		vector y = new vector(5);
 		for (int i = 0; i<x.size;i++){
-			x[i] = i+1;
-			y[i] = 1;
-			WriteLine($"{1} {x[i]} {x[i]*x[i]}");
+			x[i] = i;
+			y[i] = Cos(i);
+			WriteLine($"{x[i]} {y[i]}");
 		}
-		WriteLine($"\n");
-		vector b = new vector(x.size-1);
 		vector c = new vector(x.size-1);
+		WriteLine($"\n");
+		//We'll use cosine as our interpulation function
+		var b = new vector(x.size);
+		var d = new vector(c.size);
+		var A = new vector(c.size);
+		var D = new vector(x.size);
+		var Q = new vector(c.size);
+		var B = new vector(x.size);
+		spline.cspline_build(x,y,b,c,d,A,D,Q,B);
 
-		spline.qspline_build(x,y,b,c);
-		for (int i = 0; i<b.size;i++) WriteLine($"{b[i]} {c[i]}");
-		WriteLine($"\n");
-		for (int i = 0;i<x.size;i++){
-			y[i] = x[i];
+		for (int i = 1;i<splinePoints;i++){
+			double X = 4.0/splinePoints*i;
+			WriteLine($"{X} {spline.cspline_evaluate(x,y,b,c,d,X)}");
 		}
-		spline.qspline_build(x,y,b,c);
-		for (int i = 0;i<b.size;i++) WriteLine($"{b[i]} {c[i]}");
-		
 		WriteLine($"\n");
-		for (int i = 0; i<x.size;i++) y[i] = x[i]*x[i];
-		spline.qspline_build(x,y,b,c);	
-		for (int i = 0; i<b.size;i++) WriteLine($"{b[i]} {c[i]}");
+		for (int i = 1;i<splinePoints;i++){
+			double X = 4.0/splinePoints*i;
+			WriteLine($"{X} {spline.cspline_diff(x,y,b,c,d,X)}");
+		}
+		WriteLine($"\n");
+		for (int i = 1;i<splinePoints;i++){
+			double X = 4.0/splinePoints*i;
+			WriteLine($"{X} {spline.cspline_integrate(x,y,b,c,d,X)}");
+		}
+
 
 	}
 }

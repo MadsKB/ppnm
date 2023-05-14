@@ -1,0 +1,22 @@
+set terminal svg
+set output "CPlot.svg"
+set key bottom right
+set xlabel "x"
+set ylabel "y"
+set xzeroaxis
+set yzeroaxis
+set samples 1600
+
+
+plot \
+"plot.data" using ($1):($2) index 3 with points pointtype 1 title "Tabulated points" \
+, cos(x) with lines linetype 1 title "Underlying function (cos(x))" \
+, "plot.data" using ($1):($2) index 3 smooth csplines title "cspline" \
+, "plot.data" using ($1):($2) index 4 with points pointtype 2 title "Cubic interpulated points" \
+, "plot.data" using ($1):($2) index 5 with points pointtype 3 title "Cubic differentiated points" \
+, -sin(x) with lines linetype 2 title "prime of function" \
+, "plot.data" using ($1):($2) index 6 with points pointtype 4 title "Cubic integrated points" \
+, sin(x) with lines linetype 3 title "integral of function" \
+#, cos(x) with lines title "Underlying function" \
+#, gamma(x) with lines linetype 2 title "built-in gamma"
+#Cut is a command for getting rid of akward discontinuity lines

@@ -1,11 +1,13 @@
 DIR = ../../matlib/matrix
 
-all : plot.svg
+all : Aplot.svg Cplot.svg BOut.txt
 
-Out.txt: main.exe
+BOut.txt: main.exe
 	mono $< > $@
+Cplot.svg : Cplot.gpi plot.data
+	gnuplot < $<
 
-plot.svg : plot.gpi plot.data
+Aplot.svg : Aplot.gpi plot.data
 	gnuplot < $<
 
 plot.data : datagen.exe

@@ -61,7 +61,7 @@ public static class jacobi{
 			double c=Cos(theta),s=Sin(theta);
 			double new_app=c*c*app-2*s*c*apq+s*s*aqq;
 			double new_aqq=s*s*app+2*s*c*apq+c*c*aqq;
-			WriteLine($"{new_app-app} and {new_aqq -aqq}");
+			//WriteLine($"{new_app-app} and {new_aqq -aqq}");
 			if( Abs(new_app-app)>tol || Abs(new_aqq- aqq)>tol) //do rotation
 				{
 				double Aip =0; double Aiq = 0;
@@ -111,7 +111,7 @@ public static class jacobi{
 					V[i,q] = s*Vip + c*Viq;
 				}
 				
-			WriteLine($"{new_app-app} and {new_aqq -aqq} and {A[p,q]}");
+			//WriteLine($"{new_app-app} and {new_aqq -aqq} and {A[p,q]}");
 			}
 		}
 	

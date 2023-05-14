@@ -2,16 +2,32 @@ DIR = ../../matlib/matrix
 MATLIB = ../../matlib
 GENL = ../../Exercises/genericList
 
-all : Bplot.svg Out.txt Cplot.svg
+all : Out.txt BConvPlot.svg CConvPlot.svg BWavePlot.svg
 
-Bplot.svg : Bplot.gpi BPlot.data
+BConvPlot.svg : BConvPlot.gpi BConvPlot.data
 	gnuplot < $<
-Cplot.svg : Cplot.gpi CPlot.data
+CConvPlot.svg : CConvPlot.gpi CConvPlot.data
 	gnuplot < $<
+BWavePlot.svg : BWavePlot.gpi BWavePlot.data
+	gnuplot < $<
+
+
+
 
 Out.txt: main.exe
-	mono $< -A:1 > $@
-BPlot.data : main.exe
+	echo "Part A): \n Analytically found root: (1,1), numerical:" > $@
+	mono $< -A:1 >> $@
+	echo "Part C): " >> $@
+	echo "Ground state energy (Analytical value = -0.5)" >> $@
+	mono $< -C:1 -E0:-1 -rmax:20 -conv:0 >> $@
+	echo "1st excited state energy (Analytical value = -0.5/4 = -0.125)" >> $@
+	mono $< -C:1 -E0:-0.2 -rmax:20 -conv:0 >> $@
+	echo "2nd excited state energy (Analytical value = -0.5/9 = -1/18 = -0.055)" >> $@
+	mono $< -C:1 -E0:-0.07 -rmax:50 -conv:0 >> $@
+BWavePlot.data : main.exe
+	mono $< -plot:1 -E0:-1 > $@
+
+BConvPlot.data : main.exe
 	> $@
 	for N in $$(seq 0.05 0.05 0.5); do \
 		mono $< -rmin:$$N >> $@;\
@@ -29,7 +45,7 @@ BPlot.data : main.exe
 		mono $< -eps:$$N >> $@;\
 	done
 
-CPlot.data : main.exe
+CConvPlot.data : main.exe
 	> $@
 	for N in $$(seq 0.05 0.05 0.5); do \
 		mono $< -rmin:$$N -C:1 >> $@;\
@@ -47,7 +63,20 @@ CPlot.data : main.exe
 		mono $< -eps:$$N -C:1 >> $@;\
 	done
 
-Bplot.gpi :
+
+BWavePlot.gpi :
+	printf "set terminal svg \n\
+	set output '$(patsubst %.gpi,%.svg,$@)' \n\
+	set key bottom right \n\
+	set xlabel 'r' \n\
+	set ylabel 'f' \n\
+	set xzeroaxis \n\
+	set yzeroaxis \n\
+	plot '$(patsubst %.gpi,%.data, $@)' using (\$$1):(\$$2) index 0 with points pointtype 1 title 'Ground state (Our solution)' \
+	, (x*exp(-x)) with lines linetype 2 title 'Ground state (Analytical solution)' \
+	" >$@
+
+BConvPlot.gpi :
 	printf "set terminal svg \n\
 	set output '$(patsubst %.gpi,%.svg,$@)' \n\
 	set key bottom right \n\
@@ -56,17 +85,17 @@ Bplot.gpi :
 	set ylabel 'E0+0.5' \n\
 	set xzeroaxis \n\
 	set yzeroaxis \n\
-	plot 'BPlot.data' using (\$$1):(\$$5+0.5) index 0 with points pointtype 1 title 'rmin convergence' \n\
+	plot '$(patsubst %.gpi,%.data, $@)' using (\$$1):(\$$5+0.5) index 0 with points pointtype 1 title 'rmin convergence' \n\
 	set xlabel 'rmax' \n\
-	plot 'BPlot.data' using (\$$2):(\$$5+0.5) index 1 with points pointtype 1 title 'rmax convergence' \n\
+	plot '$(patsubst %.gpi,%.data, $@)' using (\$$2):(\$$5+0.5) index 1 with points pointtype 1 title 'rmax convergence' \n\
 	set xlabel 'acc' \n\
-	plot 'BPlot.data' using (\$$3):(\$$5+0.5) index 2 with points pointtype 1 title 'acc convergence' \n\
+	plot '$(patsubst %.gpi,%.data, $@)' using (\$$3):(\$$5+0.5) index 2 with points pointtype 1 title 'acc convergence' \n\
 	set xlabel 'eps' \n\
-	plot 'BPlot.data' using (\$$4):(\$$5+0.5) index 3 with points pointtype 1 title 'eps convergence' \n\
+	plot '$(patsubst %.gpi,%.data, $@)' using (\$$4):(\$$5+0.5) index 3 with points pointtype 1 title 'eps convergence' \n\
 	" >$@
 
 
-Cplot.gpi :
+CConvPlot.gpi :
 	printf "set terminal svg \n\
 	set output '$(patsubst %.gpi,%.svg,$@)' \n\
 	set key bottom right \n\
@@ -75,13 +104,13 @@ Cplot.gpi :
 	set ylabel 'E0+0.5' \n\
 	set xzeroaxis \n\
 	set yzeroaxis \n\
-	plot 'CPlot.data' using (\$$1):(\$$5+0.5) index 0 with points pointtype 1 title 'rmin convergence' \n\
+	plot '$(patsubst %.gpi,%.data, $@)' using (\$$1):(\$$5+0.5) index 0 with points pointtype 1 title 'rmin convergence' \n\
 	set xlabel 'rmax' \n\
-	plot [8:20] 'CPlot.data' using (\$$2):(\$$5+0.5) index 1 with points pointtype 1 title 'rmax convergence' \n\
+	plot [8:20] '$(patsubst %.gpi,%.data, $@)' using (\$$2):(\$$5+0.5) index 1 with points pointtype 1 title 'rmax convergence' \n\
 	set xlabel 'acc' \n\
-	plot 'CPlot.data' using (\$$3):(\$$5+0.5) index 2 with points pointtype 1 title 'acc convergence' \n\
+	plot '$(patsubst %.gpi,%.data, $@)' using (\$$3):(\$$5+0.5) index 2 with points pointtype 1 title 'acc convergence' \n\
 	set xlabel 'eps' \n\
-	plot 'CPlot.data' using (\$$4):(\$$5+0.5) index 3 with points pointtype 1 title 'eps convergence' \n\
+	plot '$(patsubst %.gpi,%.data, $@)' using (\$$4):(\$$5+0.5) index 3 with points pointtype 1 title 'eps convergence' \n\
 	" >$@
 
 General.dll : $(DIR)/matrix.cs $(DIR)/vector.cs $(MATLIB)/lineq/QRGS.cs roots.cs vectorNorm.cs $(MATLIB)/ODE/ODE.cs $(MATLIB)/genlist/genlist.cs 

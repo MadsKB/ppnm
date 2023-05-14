@@ -1,0 +1,9 @@
+set terminal svg 
+set output 'Plot.svg' 
+set key bottom right 
+set xlabel 't' 
+set ylabel 'u/v/w' 
+set xzeroaxis 
+set yzeroaxis 
+set samples 1600 
+plot 'plot.data' using ($1):($2) index 1 with points pointtype 1 title 'wait time variable, d=1' , 'plot.data' using ($1):($2) index 2 with points pointtype 1 title 'waittime = 1, d variable'

@@ -8,7 +8,7 @@ Out.txt: main.exe
 plot.svg : n3.gpi time.data start.par
 	gnuplot < $<
 
-start.par : #Setting initial parameters 
+start.par : #Setting initial parameters (Part C fit)
 	>$@
 	echo "A = 1 \nC = 0.1" >> $@
 

@@ -6,11 +6,11 @@ Repository for AU course "Praktisk programmering og numeriske metoder" ("practic
  ======================================
 | 1  | LinEq         | 6 | 3 | 1 | 10  |
 ---------------------------------------
-| 2  | EVD           | 6 | 3 | - |  9  |
+| 2  | EVD           | 6 | 3 | 1 | 10  | (Ask about parallation of timing utility)
 ---------------------------------------
-| 3  | LeastSquares  | 6 | 3 | 1 |  10 |
+| 3  | LeastSquares  | 6 | 3 | 1 | 10  |
 ---------------------------------------
-| 4  | Splines       | 6 | 3 | - |  9  |
+| 4  | Splines       | 6 | 3 | 1 |  10  | (I've part C, but not implemented testing yet)
 ---------------------------------------
 | 5  | ODE           | 6 | 3 | - |  9  |
 ---------------------------------------
@@ -18,15 +18,15 @@ Repository for AU course "Praktisk programmering og numeriske metoder" ("practic
 ---------------------------------------
 | 7  | Monte Carlo   | 6 | 3 | - |  9  |
 ---------------------------------------
-| 8  | Roots	     | 6 | - | - |  -  |
+| 8  | Roots	     | 6 | 3 | 1 |  10 | (Check if C requirements are forfilled)
 ---------------------------------------
 | 9  | Minimisation  | 6 | 3 | - |  9  |
 ---------------------------------------
-| 10 | Neural Network| 6 | 3 | - |  9  |
+| 10 | Neural Network| 6 | 3 | 1 |  10 |
 ---------------------------------------
 |              ...                     |
  ======================================
-|                    total points: 78  |
+|                    total points: 97  |
  ======================================
 
  ======================================

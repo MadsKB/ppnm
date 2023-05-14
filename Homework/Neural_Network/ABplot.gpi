@@ -1,0 +1,18 @@
+set terminal svg 
+set output 'ABplot.svg' 
+set key bottom right 
+set title 'Interpulation network evaluated on Cos(5x-1)Exp(-x^2)' 
+set multiplot layout 2,2 
+set xlabel 'x' 
+set ylabel 'y' 
+set xzeroaxis 
+set yzeroaxis 
+set samples 1600 
+plot 'Out.txt' using ($1):($3) index 0 with lines title 'Actual Function' , 'Out.txt' using ($1):($4) index 0 with lines title 'Network before training' , 'Out.txt' using ($1):($2) index 0 with lines title 'Network after training' 
+set ylabel 'y'' 
+set title 
+plot 'Out.txt' using ($1):($5) index 0 with lines title 'Analytical result' , 'Out.txt' using ($1):($6) index 0 with lines title 'Network result' 
+set ylabel 'y″' 
+plot 'Out.txt' using ($1):($10) index 0 with lines title 'Analytical result' , 'Out.txt' using ($1):($9) index 0 with lines title 'Network result' 
+set ylabel '∫ydx (From 0 to x)' 
+plot 'Out.txt' using ($1):($7) index 0 with lines title 'Network result' , 'Out.txt' using ($1):($8) index 0 with lines title 'Numerical result' 

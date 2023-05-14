@@ -1,0 +1,8 @@
+set terminal svg 
+set output 'BWavePlot.svg' 
+set key bottom right 
+set xlabel 'r' 
+set ylabel 'f' 
+set xzeroaxis 
+set yzeroaxis 
+plot 'BWavePlot.data' using ($1):($2) index 0 with points pointtype 1 title 'Ground state (Our solution)' , (x*exp(-x)) with lines linetype 2 title 'Ground state (Analytical solution)' 

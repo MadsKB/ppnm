@@ -1,5 +1,5 @@
 set terminal svg
-set output "Plot.svg"
+set output "APlot.svg"
 set key bottom right
 set xlabel "x"
 set ylabel "y"

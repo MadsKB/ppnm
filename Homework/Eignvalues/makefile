@@ -1,7 +1,25 @@
 DIR = $(HOME)/repos/ppnm/matlib/matrix
 
+default : Convergence.svg waveplot.svg Out.txt Cplot.svg
 
-default : Convergence.svg waveplot.svg Out.txt
+Cplot.svg : Cplot.gpi Cplot.data start.par
+	gnuplot < $<
+
+start.par : #Setting initial parameters (part C fit)
+	>$@
+	echo "A = 1 \n C=0.1" >> $@
+
+Cplot.data : CTimed.exe
+	> $@
+	for N in $$(seq 3 1 300); do \
+		time --format "$$N %e" --output $@ --append \
+		mono $< -n:$$N ;\
+	done
+	echo "\n" >> $@;
+	for N in $$(seq 3 1 300); do \
+		time --format "$$N %e" --output $@ --append \
+		mono $< -n:$$N -opt:True ;\
+	done
 
 waveplot.svg : waveplot.gpi wave.data
 	gnuplot < $<
@@ -29,6 +47,10 @@ Out.txt: main.exe
 
 jacobi_and_Matrix.dll : $(DIR)/matrix.cs $(DIR)/vector.cs jacobian.cs
 	mcs -target:library -out:$@ $^
+
+
+CTimed.exe: CTimed.cs jacobi_and_Matrix.dll
+	mcs -target:exe -out:$@ $(addprefix -reference:,$(filter %.dll,$^)) $<
 
 main.exe: main.cs jacobi_and_Matrix.dll
 	mcs -target:exe -out:$@ $(addprefix -reference:,$(filter %.dll,$^)) $<

@@ -1,0 +1,17 @@
+set terminal svg
+set output "Cplot.svg"
+set key bottom right
+set xlabel "n (Size of matrix)"
+set ylabel "Time taken"
+set xzeroaxis
+set yzeroaxis
+set samples 1600
+n3(x) = A*x**3+C
+fit n3(x) "Cplot.data" using ($1):($2) index 0 via "start.par"
+
+plot \
+"Cplot.data" using ($1):($2) index 0 with points pointtype 1 title "Unoptimized version" \
+, "Cplot.data" using ($1):($2) index 1 with points pointtype 1 title "Optimized version" \
+, n3(x) t "Fit of unoptimized version to A*n^3+C"
+#, gamma(x) with lines linetype 2 title "built-in gamma"
+#Cut is a command for getting rid of akward discontinuity lines

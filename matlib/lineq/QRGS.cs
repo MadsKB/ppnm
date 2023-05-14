@@ -1,5 +1,5 @@
 
-public class QRGS{
+public partial class QRGS{
 	public matrix Q,R;
 	public QRGS(matrix A){
 	//Ortagonalizing A
