@@ -1,0 +1,26 @@
+part A):
+First we integrate cos(x)*sin(y) with x and y limits 0 to pi/2 and set number of points N = 1e6 (See 'ErrScaling.svg' for error scaling plot) 
+In the following, First element of each tuple is the result, second is the estimated error 
+
+Analytical result: 1, numerical: (1.0006309037114, 0.00072212407588417) 
+
+Next, integrating over a circle of radius 1
+Analytical result: π, numerical: (3.143888, 0.00164058533562141) 
+
+Now the heavily singular, 'fun' integral
+∫_0^π  dx/π ∫_0^π  dy/π ∫_0^π  dz/π [1-cos(x)cos(y)cos(z)]^(-1) = Γ(1/4)4/(4π^3) ≈ 1.3932039296856768591842462603255
+Our result evaluating the integral above: (1.39392163148944, 0.00620135179921177)
+
+Part B):
+Integrating cos(x)*sin(y) again with the same limits as before, this time with qusai random sampling (Again see 'ErrScaling.svg' for error scaling plot)
+Theoretical: 1, numerical quasi: (0.999998539106399, 4.97841923015299E-06)
+
+Part C):
+Integrating the step function: f(x,y) = 0 if x<0.3, f(x,y) =1 otherwise. Limits are 0 to 1 for both x and y and N=500. Using both plainmc and stratified sampling 
+
+Analytical: 0.7, plainmc: (0.748, 0.0194162818273736)
+Analytical: 0.7, stratified: (0.700625, 0.00254567648180204) 
+
+Now integrating over a circle of radius 1, setting N = 100000
+Analytical: π, plainmc: (3.14988, 0.00517472316708826)
+Analytical: π, stratified: (3.14490163683515, 0.00135361083186608)

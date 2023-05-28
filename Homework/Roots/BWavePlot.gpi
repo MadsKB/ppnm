@@ -1,6 +1,6 @@
 set terminal svg 
 set output 'BWavePlot.svg' 
-set key bottom right 
+set key top right 
 set xlabel 'r' 
 set ylabel 'f' 
 set xzeroaxis 

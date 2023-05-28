@@ -15,7 +15,7 @@ BWavePlot.svg : BWavePlot.gpi BWavePlot.data
 
 
 Out.txt: main.exe
-	echo "Part A): \n Analytically found root: (1,1), numerical:" > $@
+	echo "Part A): \n Analytically found root of Rosenbrock's vally function: (1,1), numerically found root with starting guess (0,0):" > $@
 	mono $< -A:1 >> $@
 	echo "Part C): " >> $@
 	echo "Ground state energy (Analytical value = -0.5)" >> $@
@@ -67,7 +67,7 @@ CConvPlot.data : main.exe
 BWavePlot.gpi :
 	printf "set terminal svg \n\
 	set output '$(patsubst %.gpi,%.svg,$@)' \n\
-	set key bottom right \n\
+	set key top right \n\
 	set xlabel 'r' \n\
 	set ylabel 'f' \n\
 	set xzeroaxis \n\
@@ -83,6 +83,7 @@ BConvPlot.gpi :
 	set multiplot layout 2,2 \n\
 	set xlabel 'rmin' \n\
 	set ylabel 'E0+0.5' \n\
+	set xtics rotate by -45 \n\
 	set xzeroaxis \n\
 	set yzeroaxis \n\
 	plot '$(patsubst %.gpi,%.data, $@)' using (\$$1):(\$$5+0.5) index 0 with points pointtype 1 title 'rmin convergence' \n\
@@ -102,6 +103,7 @@ CConvPlot.gpi :
 	set multiplot layout 2,2 \n\
 	set xlabel 'rmin' \n\
 	set ylabel 'E0+0.5' \n\
+	set xtics rotate by -45 \n\
 	set xzeroaxis \n\
 	set yzeroaxis \n\
 	plot '$(patsubst %.gpi,%.data, $@)' using (\$$1):(\$$5+0.5) index 0 with points pointtype 1 title 'rmin convergence' \n\

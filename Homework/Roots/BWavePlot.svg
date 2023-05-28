@@ -153,7 +153,7 @@
 </g>
 	<g id="gnuplot_plot_1" ><title>Ground state (Our solution)</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(507.09,390.30)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(507.09,39.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Ground state (Our solution)</tspan></text>
 	</g>
 </g>
@@ -244,17 +244,17 @@
 	<use xlink:href='#gpPt0' transform='translate(531.29,416.00) scale(4.50)' color='rgb(148,   0, 211)'/>
 	<use xlink:href='#gpPt0' transform='translate(573.88,417.44) scale(4.50)' color='rgb(148,   0, 211)'/>
 	<use xlink:href='#gpPt0' transform='translate(574.82,417.45) scale(4.50)' color='rgb(148,   0, 211)'/>
-	<use xlink:href='#gpPt0' transform='translate(536.76,386.40) scale(4.50)' color='rgb(148,   0, 211)'/>
+	<use xlink:href='#gpPt0' transform='translate(536.76,36.01) scale(4.50)' color='rgb(148,   0, 211)'/>
 </g>
 	</g>
 	<g id="gnuplot_plot_2" ><title>Ground state (Analytical solution)</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(507.09,408.30)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(507.09,57.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Ground state (Analytical solution)</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(  0, 158, 115)'  d='M515.48,404.40 L558.04,404.40 M80.98,421.39 L85.97,346.20 L90.96,282.69 L95.95,229.49 L100.93,185.40 L105.92,149.31
+	<path stroke='rgb(  0, 158, 115)'  d='M515.48,54.01 L558.04,54.01 M80.98,421.39 L85.97,346.20 L90.96,282.69 L95.95,229.49 L100.93,185.40 L105.92,149.31
 		L110.91,120.26 L115.90,97.36 L120.89,79.83 L125.88,66.99 L130.86,58.20 L135.85,52.92 L140.84,50.65 L145.83,50.96
 		L150.82,53.46 L155.81,57.81 L160.79,63.71 L165.78,70.89 L170.77,79.11 L175.76,88.18 L180.75,97.91 L185.74,108.14
 		L190.72,118.74 L195.71,129.58 L200.70,140.58 L205.69,151.62 L210.68,162.66 L215.66,173.61 L220.65,184.42 L225.64,195.06

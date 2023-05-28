@@ -1,6 +1,6 @@
 set terminal svg
 set output "APlot.svg"
-set key bottom right
+set key top left
 set xlabel "x"
 set ylabel "y"
 set xzeroaxis

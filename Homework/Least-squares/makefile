@@ -1,6 +1,9 @@
 DIR = $(HOME)/repos/ppnm/matlib/matrix
 
+All : Out.txt Plot.svg
 
+Out.txt : main.exe
+	mono $< -x:1,2,3,4,6,9,10,13,15 -y:117,100,88,72,53,29.5,25.2,15.2,11.1 -dy:5,5,5,4,4,3,3,2,2 -fitOut:False -start:0 -end:16 > $@
 Plot.svg : plot.gpi fit.data raw.data
 	gnuplot $< > $@
 fit.data : main.exe

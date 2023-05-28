@@ -1,0 +1,3 @@
+HalfTime: 4.08004641904341 +- 0.166914715082982 days
+Modern value (from wikipedia): 3.6319(23) days
+Our value isn't within the uncertanty bounds of the moderen one, but not too far off either, so i belive the program worked

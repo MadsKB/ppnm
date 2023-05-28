@@ -7,18 +7,18 @@ Cplot.svg : Cplot.gpi Cplot.data start.par
 
 start.par : #Setting initial parameters (part C fit)
 	>$@
-	echo "A = 1 \n C=0.1" >> $@
+	echo "A = 1\nC=0.1" >> $@
 
 Cplot.data : CTimed.exe
 	> $@
-	for N in $$(seq 3 1 300); do \
-		time --format "$$N %e" --output $@ --append \
-		mono $< -n:$$N ;\
+	for N in $$(seq 30 30 300); do \
+		(time --format "$$N %e" --output $@ --append\
+		mono $< -n:$$N);\
 	done
 	echo "\n" >> $@;
-	for N in $$(seq 3 1 300); do \
-		time --format "$$N %e" --output $@ --append \
-		mono $< -n:$$N -opt:True ;\
+	for N in $$(seq 30 30 300); do \
+		(time --format "$$N %e" --output $@ --append \
+		mono $< -n:$$N -opt:True) ;\
 	done
 
 waveplot.svg : waveplot.gpi wave.data
@@ -58,4 +58,4 @@ main.exe: main.cs jacobi_and_Matrix.dll
 HSym.exe: hydrogenSym.cs jacobi_and_Matrix.dll
 	mcs -target:exe -out:$@ $(addprefix -reference:,$(filter %.dll,$^)) $<
 clean:
-	$(RM) *.exe *.dll *log [Oo]ut.txt *.data 
+	$(RM) *.exe *.dll *log [Oo]ut.txt *.data *.par *.svg

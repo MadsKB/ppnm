@@ -1,5 +1,5 @@
 Part A): 
- Analytically found root: (1,1), numerical:
+ Analytically found root of Rosenbrock's vally function: (1,1), numerically found root with starting guess (0,0):
          1          1 
 Part C): 
 Ground state energy (Analytical value = -0.5)

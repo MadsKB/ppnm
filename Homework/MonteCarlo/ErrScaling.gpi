@@ -1,0 +1,12 @@
+set terminal svg 
+set output 'ErrScaling.svg' 
+set key top right 
+set xlabel 'N' 
+set ylabel 'error' 
+set title 'Error scaling of integral cos(x)*sin(y) with limits 0 to pi/2 for both x and y' 
+set xzeroaxis 
+set yzeroaxis 
+set samples 1600 
+n(x) = A/sqrt(x)+C 
+fit n(x) 'plot.data' using ($1):($3) via 'start.par' 
+plot 'plot.data' using ($1):($3) index 0 with points title 'Actual Error of plainmc', 'plot.data' using ($1):($2) index 0 with points title 'Estimated Error of plainmc', 'plot.data' using ($1):($4) index 0 with points title 'Estimated Error of quasimc', 'plot.data' using ($1):($5) index 0 with points title 'Actual Error of quasimc', n(x) t 'Fit of actual plainmc error to A/sqrt(N)+C'

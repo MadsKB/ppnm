@@ -2,7 +2,7 @@ set terminal svg
 set output "Cplot.svg"
 set key bottom right
 set xlabel "n (Size of matrix)"
-set ylabel "Time taken"
+set ylabel "elapsed time (s)"
 set xzeroaxis
 set yzeroaxis
 set samples 1600

@@ -7,4 +7,4 @@ set title 'DE solver evaluated on 0 =2y + y″ with y(0) = 1, yʹ(0) = 0'
 set xzeroaxis 
 set yzeroaxis 
 set samples 1600 
-plot 'Out.txt' using ($1):($3) index 1 with lines title 'Analytical solution' , 'Out.txt' using ($1):($2) index 1 with lines title 'Network solution'
+plot 'plot.data' using ($1):($3) index 1 with lines title 'Analytical solution' , 'plot.data' using ($1):($2) index 1 with lines title 'Network solution'

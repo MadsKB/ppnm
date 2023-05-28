@@ -131,7 +131,7 @@ public static class spline {
 	public static double cspline_integrate(vector x, vector y, vector b, vector c, vector d, double z){ //Evaluates the integral with the limits x[0] to z
 		int iMax = binsearch(x,z);
 		double Out =0;
-		for (int i = 0; i<iMax-1; i++)Out+=y[i]*(x[i+1]-x[i])+b[i]/2*Pow(x[i+1]-x[i],2)+c[i]/3*Pow(x[i+1]-x[i],3) + d[i]/4*Pow(x[i+1]-x[i],4);
+		for (int i = 0; i<iMax; i++)Out+=y[i]*(x[i+1]-x[i])+b[i]/2*Pow(x[i+1]-x[i],2)+c[i]/3*Pow(x[i+1]-x[i],3) + d[i]/4*Pow(x[i+1]-x[i],4);
 		return Out + y[iMax]*(z-x[iMax])+b[iMax]/2*Pow(z-x[iMax],2)+c[iMax]/3*Pow(z-x[iMax],3)+d[iMax]/4*Pow(z-x[iMax],4);
 	}
 

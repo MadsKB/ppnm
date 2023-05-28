@@ -1,9 +1,10 @@
 set terminal svg 
 set output 'Bplot.svg' 
 set key bottom right 
+set title 'Motion of a planet around a star in GR' 
 set xlabel 'x' 
 set ylabel 'y' 
 set xzeroaxis 
 set yzeroaxis 
 set samples 1600 
-plot 'plot.data' using (1/$2)*cos($1):(1/$2)*sin($1) index 1 with lines title 'i' , 'plot.data' using (1/$2)*cos($1):(1/$2)*sin($1) index 2 with lines title 'ii' , 'plot.data' using (1/$2)*cos($1):(1/$2)*sin($1) index 3 with lines title 'iii'
+plot 'plot.data' using (1/$2)*cos($1):(1/$2)*sin($1) index 2 with lines title 'i' , 'plot.data' using (1/$2)*cos($1):(1/$2)*sin($1) index 3 with lines title 'ii' , 'plot.data' using (1/$2)*cos($1):(1/$2)*sin($1) index 4 with lines title 'iii'

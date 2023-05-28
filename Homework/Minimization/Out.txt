@@ -1,3 +1,11 @@
- 1.00008827596918 1.00026363678565 26
-3.39590942165542 0 6
-m = 125.972296778163, Gamma = 2.08462663629493, A = 9.86855949335682, steps = 99
+Part A):
+qNewton Rosenbrock's valley function, root found at x = 0.999995517081019 y = 0.999991026939563, found in 18 steps
+Analytical root: (1,1) 
+
+qNewton Himmelblau's function, root found at x = 3.58442832173828 y = -1.848126537635, found in 9 steps
+According to wikipedia, the function has a root at roughly (3.584428,-1.848126)
+
+Part B):
+qNewton: m = 125.972047790598, Gamma = 2.08693708987857, A = 9.87728635178918, steps = 26
+Part C):
+Simplex: m = 125.930089278343, Gamma = 3.08100951954803, A = 13.449913970636, steps = 15

@@ -1,0 +1,11 @@
+set terminal svg 
+set output 'Cplot.svg' 
+set key bottom right 
+set xlabel 'x' 
+set ylabel 'y' 
+set xzeroaxis 
+set yzeroaxis 
+set xrange [-1.5:1.5] 
+set yrange [-1.5:1.5] 
+set samples 1600 
+plot 'plot.data' using ($2):($3) index 5 with points title 'body 1 trace' , 'plot.data' using ($6):($7) index 5 with points title 'body 2 trace' , 'plot.data' using ($10):($11) index 5 with points title 'body 3 trace'

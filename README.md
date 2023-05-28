@@ -6,27 +6,27 @@ Repository for AU course "Praktisk programmering og numeriske metoder" ("practic
  ======================================
 | 1  | LinEq         | 6 | 3 | 1 | 10  |
 ---------------------------------------
-| 2  | EVD           | 6 | 3 | 1 | 10  | (Ask about parallation of timing utility)
+| 2  | EVD           | 6 | 3 | 1 | 10  |
 ---------------------------------------
 | 3  | LeastSquares  | 6 | 3 | 1 | 10  |
 ---------------------------------------
-| 4  | Splines       | 6 | 3 | 1 |  10  | (I've part C, but not implemented testing yet)
+| 4  | Splines       | 6 | 3 | 1 |  10 |
 ---------------------------------------
-| 5  | ODE           | 6 | 3 | - |  9  |
+| 5  | ODE           | 6 | 3 | 1 |  10 |
 ---------------------------------------
 | 6  | Integration   | 6 | 3 | 1 |  10 |
 ---------------------------------------
-| 7  | Monte Carlo   | 6 | 3 | - |  9  |
+| 7  | Monte Carlo   | 6 | 3 | 1 |  10 |
 ---------------------------------------
-| 8  | Roots	     | 6 | 3 | 1 |  10 | (Check if C requirements are forfilled)
+| 8  | Roots	     | 6 | 3 | 1 |  10 |
 ---------------------------------------
-| 9  | Minimisation  | 6 | 3 | - |  9  |
+| 9  | Minimisation  | 6 | 3 | 1 |  10 |
 ---------------------------------------
 | 10 | Neural Network| 6 | 3 | 1 |  10 |
 ---------------------------------------
 |              ...                     |
  ======================================
-|                    total points: 97  |
+|                    total points: 100 |
  ======================================
 
  ======================================
@@ -56,17 +56,3 @@ Repository for AU course "Praktisk programmering og numeriske metoder" ("practic
 ---------------------------------------
 |				       |
  ======================================
-(X indicate all done, x indicate done, but optional parts not done)
-Exercises:
-[X] Posix
-[X] git
-[X] hello
-[X] Math
-[X] Epsilon
-[X] vec
-[X] input/output
-[X] complex
-[X] Wiki
-[x] generic list
-[x] multiprocessing
-[x] plots
