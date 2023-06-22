@@ -1,0 +1,4 @@
+eigenvar = 16.4365793751254, found in 31 iterations
+     0.267      0.901          1 
+eigenvar = 16.4394216005115, found in 13 iterations
+     0.245      0.899          1 
