@@ -1,0 +1,14 @@
+set terminal svg 
+set output 'SafeVsUnsafe.svg' 
+set key bottom right 
+set title '300x300 matrix, accuracy goal 1e-5'
+set multiplot layout 2,1 
+set xlabel 'shift' 
+set ylabel 'Time taken (s)' 
+set xzeroaxis 
+set yzeroaxis 
+set samples 1600 
+plot 'SafeVsUnsafeShiftVanilla.data' using ($1):($2) index 0 with points pointtype 1 title 'Vanilla' , 'SafeVsUnsafeShiftUnsafeVanilla.data' using ($1):($2) index 0 with points pointtype 4 title 'Unsafe Vanilla' 
+set title 'NxN matrix with a shift of 0, accuracy goal 1e-3'
+set xlabel 'N'
+plot 'SafeVsUnsafeNVanilla.data' using ($1):($2) index 0 with points pointtype 1 title 'Vanilla' , 'SafeVsUnsafeNUnsafeVanilla.data' using ($1):($2) index 0 with points pointtype 4 title 'Unsafe Vanilla' 

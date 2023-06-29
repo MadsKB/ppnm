@@ -1,0 +1,10 @@
+set terminal svg 
+set output 'shiftTimed.svg' 
+set key top right 
+set xlabel 'shift' 
+set ylabel 'Computation Time (s)' 
+set xzeroaxis 
+set yzeroaxis 
+set samples 1600 
+set title '300x300 matrix, accuracy goal 1e-6'
+plot 'shiftVanilla.data' using ($1):($2) index 0 with points pointtype 1 title 'Vanilla' , 'shiftV2Recal500.data' using ($1):($2) index 0 with points pointtype 2 title 'V2 Recal Every 500' , 'shiftV2Recal10.data' using ($1):($2) index 0 with points pointtype 2 title 'V2 Recal Every 10' , 'shiftV3Recal1e-21.data' using ($1):($2) index 0 with points pointtype 3 title 'V3 recalErr 1e-21' , 'shiftV3Recal1e-2.data' using ($1):($2) index 0 with points pointtype 3 title 'V3 recalErr 1e-2' 

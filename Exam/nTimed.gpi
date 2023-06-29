@@ -1,0 +1,10 @@
+set terminal svg 
+set output 'nTimed.svg' 
+set key top right 
+set xlabel 'N' 
+set title 'NxN matrix, shift =0 accuracy goal 1e-6' 
+set ylabel 'Computation Time (s)' 
+set xzeroaxis 
+set yzeroaxis 
+set samples 1600 
+plot 'nVanilla.data' using ($1):($2) index 0 with points pointtype 1 title 'Vanilla' , 'nV2Recal10.data' using ($1):($2) index 0 with points pointtype 2 title 'V2 recal every 10' , 'nV2Recal500.data' using ($1):($2) index 0 with points pointtype 2 title 'Improved, recal every 500' , 'nV3Recal1e-21.data' using ($1):($2) index 0 with points pointtype 3 title 'V3, recalErr = 1e-21' , 'nV3Recal1e-2.data' using ($1):($2) index 0 with points pointtype 3 title 'V3, recalErr = 1e-2' 

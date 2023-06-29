@@ -1,4 +1,63 @@
-eigenvar = 16.4365793751254, found in 31 iterations
-     0.267      0.901          1 
-eigenvar = 16.4394216005115, found in 13 iterations
+According to wolframalpha, the matrix:
+
+         5          2          1 
+         2          7          8 
+         1          8          9 
+Has the eigenvalues and vectors 
+
+v_1≈(0.244653, 0.899346, 1)^T, λ_1≈16.4394
+v_2≈(-3.96181, -0.0341683, 1)^T, λ_2≈4.76484
+v_3≈(0.262615, -1.18336, 1)^T, λ_3≈-0.204261 
+
+Preforming our unsafe vanilla algorithem with a shift of 100, 8, and 0 (With accuracy goal set to 1e-6) yields
+shift 100: eigenvar = 16.4394185601218, found in 57 iterations; Eigenvector:
      0.245      0.899          1 
+
+shift 8: eigenvar = 4.76483924972056, found in 9 iterations; Eigenvector
+     -3.96    -0.0342          1 
+
+shift 0: eigenvar = -0.204260879297402, found in 3 iterations; Eigenvector
+     0.263      -1.18          1 
+
+Preforming our safe vanilla algorithem with a shift of 100, 8, and 0 (With accuracy goal set to 1e-6) yields
+shift 100: eigenvar = 16.4394185601218, found in 57 iterations; Eigenvector:
+     0.245      0.899          1 
+
+shift 8: eigenvar = 4.76483924972056, found in 9 iterations; Eigenvector
+     -3.96    -0.0342          1 
+
+shift 0: eigenvar = -0.204260879297402, found in 3 iterations; Eigenvector
+     0.263      -1.18          1 
+
+
+Repeating the previous, but with a starting eigenvector near(ish) to the real one
+shift 100: eigenvar = 16.439418323703, found in 46 iterations; Eigenvector
+     0.245        0.9          1 
+
+shift 5: eigenvar = 4.76483921147544, found in 2 iterations; Eigenvector
+     -3.96    -0.0342          1 
+
+shift 0: eigenvar = -0.204260879443314, found in 3 iterations; Eigenvector
+     0.263      -1.18          1 
+
+
+Now we test a version of our algorithem 'improved' by having it recalculate the matrix A every 10 itterations as suggested in the book
+shift 100: eigenvar = 16.4394216678535, found in 14 iterations; Eigenvector:
+     0.245      0.899          1 
+
+shift 5: eigenvar = 4.76483921126152, found in 3 iterations; Eigenvector
+     -3.96    -0.0342          1 
+
+shift 0: eigenvar = -0.204260879297402, found in 3 iterations; Eigenvector
+     0.263      -1.18          1 
+
+
+Now yet another version of our algorithem, which recalculates the matrix whenever the change in the error between the current, and previous itteration becomes too small
+shift 100: eigenvar = 16.4394149205975, found in 109 iterations; Eigenvector:
+     0.246        0.9          1 
+
+shift 5: eigenvar = 4.76483921129224, found in 3 iterations; Eigenvector
+     -3.96    -0.0342          1 
+
+shift 0: eigenvar = -0.204260879454906, found in 3 iterations; Eigenvector
+     0.263      -1.18          1 
